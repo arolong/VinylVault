@@ -52,12 +52,20 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-xl font-semibold mb-4">Géneros</h4>
-            <ul className="space-y-2 text-vintage-cream/80">
-              <li>🎤 Rap</li>
-              <li>🎧 Hip-Hop</li>
-              <li>🎸 Rock</li>
-              <li>🎺 Salsa</li>
+            <h4 className="text-xl font-semibold mb-4">Contacto</h4>
+            <ul className="space-y-3 text-vintage-cream/80">
+              <li className="flex items-center gap-2">
+                <span>📞</span>
+                <a href="tel:+573005023496" className="hover:text-vintage-orange transition-colors">
+                  +57 300 502 3496
+                </a>
+              </li>
+              <li className="flex items-center gap-2">
+                <span>📧</span>
+                <a href="mailto:andres12356112@gmail.com" className="hover:text-vintage-orange transition-colors">
+                  andres12356112@gmail.com
+                </a>
+              </li>
             </ul>
           </div>
         </div>
