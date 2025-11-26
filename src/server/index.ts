@@ -67,6 +67,39 @@ const vinyls: Vinyl[] = [
         description: 'Álbum debut de Tupac Shakur, crudo y poderoso.',
         stock: 10
     },
+    {
+        id: '5b',
+        title: 'All Eyez on Me',
+        artist: '2Pac',
+        genre: 'rap',
+        price: 148000,
+        year: 1996,
+        coverImage: 'https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=400&h=400&fit=crop',
+        description: 'Doble álbum de 2Pac, uno de los más vendidos en la historia del rap.',
+        stock: 9
+    },
+    {
+        id: '5c',
+        title: 'Tha Doggfather',
+        artist: 'Snoop Dogg',
+        genre: 'rap',
+        price: 144000,
+        year: 1997,
+        coverImage: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400&h=400&fit=crop',
+        description: 'Segundo álbum de estudio de Snoop Dogg con producción de Dr. Dre.',
+        stock: 10
+    },
+    {
+        id: '5d',
+        title: 'Tha Last Meal',
+        artist: 'Snoop Dogg',
+        genre: 'rap',
+        price: 139000,
+        year: 2000,
+        coverImage: 'https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=400&h=400&fit=crop',
+        description: 'Tercer álbum de estudio de Snoop Dogg lleno de colaboraciones.',
+        stock: 8
+    },
     // HIP-HOP
     {
         id: '6',
@@ -121,6 +154,39 @@ const vinyls: Vinyl[] = [
         year: 1991,
         coverImage: 'https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=400&h=400&fit=crop',
         description: 'Segundo álbum innovador de A Tribe Called Quest.',
+        stock: 11
+    },
+    {
+        id: '10b',
+        title: 'Aquemini',
+        artist: 'OutKast',
+        genre: 'hip-hop',
+        price: 132000,
+        year: 1998,
+        coverImage: 'https://images.unsplash.com/photo-1487180144351-b8472da7d491?w=400&h=400&fit=crop',
+        description: 'Tercer álbum de OutKast con producción innovadora y líricas profundas.',
+        stock: 13
+    },
+    {
+        id: '10c',
+        title: 'Stankonia',
+        artist: 'OutKast',
+        genre: 'hip-hop',
+        price: 134000,
+        year: 2000,
+        coverImage: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400&h=400&fit=crop',
+        description: 'Cuarto álbum de estudio de OutKast ganador de múltiples Grammy.',
+        stock: 12
+    },
+    {
+        id: '10d',
+        title: 'The Infamous',
+        artist: 'Mobb Deep',
+        genre: 'hip-hop',
+        price: 128000,
+        year: 1995,
+        coverImage: 'https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=400&h=400&fit=crop',
+        description: 'Álbum debut de Mobb Deep que define el sonido dark de Nueva York.',
         stock: 11
     },
     // ROCK
@@ -179,6 +245,39 @@ const vinyls: Vinyl[] = [
         description: 'Penúltimo álbum de The Beatles, con grandes clásicos.',
         stock: 22
     },
+    {
+        id: '15b',
+        title: 'Back in Black',
+        artist: 'AC/DC',
+        genre: 'rock',
+        price: 152000,
+        year: 1980,
+        coverImage: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400&h=400&fit=crop',
+        description: 'Álbum icónico de AC/DC con el clásico "Back in Black".',
+        stock: 19
+    },
+    {
+        id: '15c',
+        title: 'Highway to Hell',
+        artist: 'AC/DC',
+        genre: 'rock',
+        price: 150000,
+        year: 1979,
+        coverImage: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=400&h=400&fit=crop',
+        description: 'Penúltimo álbum de AC/DC con Bon Scott antes de su muerte.',
+        stock: 17
+    },
+    {
+        id: '15d',
+        title: 'The Wall (Pink Floyd)',
+        artist: 'Pink Floyd',
+        genre: 'rock',
+        price: 180000,
+        year: 1979,
+        coverImage: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400&h=400&fit=crop',
+        description: 'Álbum doble conceptual, una de las obras maestras del rock progresivo.',
+        stock: 14
+    },
     // SALSA
     {
         id: '16',
@@ -233,6 +332,50 @@ const vinyls: Vinyl[] = [
         year: 1984,
         coverImage: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400&h=400&fit=crop',
         description: 'Álbum romántico de Eddie Santiago con balada salsera.',
+        stock: 11
+    },
+    {
+        id: '20b',
+        title: 'El Sueño del Curro',
+        artist: 'Juan Luis Guerra',
+        genre: 'salsa',
+        price: 116000,
+        year: 1989,
+        coverImage: 'https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=400&h=400&fit=crop',
+        description: 'Álbum ganador de Grammy con éxitos internacionales de Juan Luis Guerra.',
+        stock: 12
+    },
+    {
+        id: '20c',
+        title: 'La Murga de Oro',
+        artist: 'Rubén Blades',
+        genre: 'salsa',
+        price: 113000,
+        year: 1980,
+        coverImage: 'https://images.unsplash.com/photo-1487180144351-b8472da7d491?w=400&h=400&fit=crop',
+        description: 'Álbum clásico de Rubén Blades con la Fania All-Stars.',
+        stock: 10
+    },
+    {
+        id: '20d',
+        title: 'Buscando América',
+        artist: 'Rubén Blades',
+        genre: 'salsa',
+        price: 117000,
+        year: 1984,
+        coverImage: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400&h=400&fit=crop',
+        description: 'Álbum de protesta social de Rubén Blades, tocando temas políticos.',
+        stock: 9
+    },
+    {
+        id: '20e',
+        title: 'La Voz Timba',
+        artist: 'Isaac Delgado',
+        genre: 'salsa',
+        price: 111000,
+        year: 1990,
+        coverImage: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=400&h=400&fit=crop',
+        description: 'Álbum de timba cubana con rítmos modernos y contagiosos.',
         stock: 11
     }
 ];
