@@ -26,38 +26,6 @@ export default function CatalogPage() {
       setVinyls(data);
     } catch (error) {
       console.error("Error fetching vinyls:", error);
-      // Fallback a datos mock si la API no está disponible
-      const mockVinyls: Vinyl[] = [
-        {
-          id: "1",
-          title: "Illmatic",
-          artist: "Nas",
-          genre: "hip-hop",
-          price: 125000,
-          year: 1994,
-          coverImage: "https://picsum.photos/seed/illmatic/400/400",
-          description:
-            "Album clásico de hip-hop, considerado una obra maestra del género.",
-          stock: 15,
-        },
-        {
-          id: "2",
-          title: "The Marshall Mathers LP",
-          artist: "Eminem",
-          genre: "rap",
-          price: 145000,
-          year: 2000,
-          coverImage: "https://picsum.photos/seed/eminem/400/400",
-          description:
-            "Segundo álbum de estudio de Eminem, uno de los más exitosos.",
-          stock: 12,
-        },
-      ];
-      const filtered =
-        selectedGenre === "all"
-          ? mockVinyls
-          : mockVinyls.filter((v) => v.genre === selectedGenre);
-      setVinyls(filtered);
     } finally {
       setLoading(false);
     }
