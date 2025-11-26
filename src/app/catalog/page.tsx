@@ -17,7 +17,16 @@ export default function CatalogPage() {
   const fetchVinyls = async () => {
     setLoading(true);
     try {
-      // Por ahora usamos datos mock, luego conectarás con el backend
+      const url = selectedGenre === "all" 
+        ? "http://localhost:3001/api/vinyls"
+        : `http://localhost:3001/api/vinyls?genre=${selectedGenre}`;
+      
+      const response = await fetch(url);
+      const data = await response.json();
+      setVinyls(data);
+    } catch (error) {
+      console.error("Error fetching vinyls:", error);
+      // Fallback a datos mock si la API no está disponible
       const mockVinyls: Vinyl[] = [
         {
           id: "1",
@@ -43,126 +52,12 @@ export default function CatalogPage() {
             "Segundo álbum de estudio de Eminem, uno de los más exitosos.",
           stock: 12,
         },
-        {
-          id: "3",
-          title: "Led Zeppelin IV",
-          artist: "Led Zeppelin",
-          genre: "rock",
-          price: 165000,
-          year: 1971,
-          coverImage: "https://picsum.photos/seed/ledzeppelin/400/400",
-          description: 'Cuarto álbum de estudio, incluye "Stairway to Heaven".',
-          stock: 8,
-        },
-        {
-          id: "4",
-          title: "Siembra",
-          artist: "Willie Colón & Rubén Blades",
-          genre: "salsa",
-          price: 115000,
-          year: 1978,
-          coverImage: "https://picsum.photos/seed/siembra/400/400",
-          description: "Álbum icónico de salsa, con Pedro Navaja.",
-          stock: 10,
-        },
-        {
-          id: "5",
-          title: "The Dark Side of the Moon",
-          artist: "Pink Floyd",
-          genre: "rock",
-          price: 178000,
-          year: 1973,
-          coverImage: "https://picsum.photos/seed/pinkfloyd/400/400",
-          description: "Obra maestra del rock progresivo.",
-          stock: 20,
-        },
-        {
-          id: "6",
-          title: "Ready to Die",
-          artist: "The Notorious B.I.G.",
-          genre: "rap",
-          price: 136000,
-          year: 1994,
-          coverImage: "https://picsum.photos/seed/biggie/400/400",
-          description: "Debut de Biggie, un clásico del rap de los 90.",
-          stock: 14,
-        },
-        {
-          id: "7",
-          title: "Appetite for Destruction",
-          artist: "Guns N' Roses",
-          genre: "rock",
-          price: 149000,
-          year: 1987,
-          coverImage: "https://picsum.photos/seed/gnr/400/400",
-          description: 'Álbum debut, incluye "Sweet Child O Mine".',
-          stock: 18,
-        },
-        {
-          id: "8",
-          title: "De Ti Depende",
-          artist: "Oscar D'León",
-          genre: "salsa",
-          price: 112000,
-          year: 1983,
-          coverImage: "https://picsum.photos/seed/oscar/400/400",
-          description: "Clásico de la salsa venezolana.",
-          stock: 9,
-        },
-        {
-          id: "9",
-          title: "The Chronic",
-          artist: "Dr. Dre",
-          genre: "hip-hop",
-          price: 132000,
-          year: 1992,
-          coverImage: "https://picsum.photos/seed/drdre/400/400",
-          description: "Álbum debut en solitario que definió el G-funk.",
-          stock: 11,
-        },
-        {
-          id: "10",
-          title: "Nevermind",
-          artist: "Nirvana",
-          genre: "rock",
-          price: 161000,
-          year: 1991,
-          coverImage: "https://picsum.photos/seed/nirvana/400/400",
-          description: "Álbum revolucionario del grunge.",
-          stock: 16,
-        },
-        {
-          id: "11",
-          title: "Siembra Vol. 2",
-          artist: "Héctor Lavoe",
-          genre: "salsa",
-          price: 120000,
-          year: 1980,
-          coverImage: "https://picsum.photos/seed/lavoe/400/400",
-          description: "Continuación del clásico de salsa.",
-          stock: 7,
-        },
-        {
-          id: "12",
-          title: "Enter the Wu-Tang",
-          artist: "Wu-Tang Clan",
-          genre: "hip-hop",
-          price: 140000,
-          year: 1993,
-          coverImage: "https://picsum.photos/seed/wutang/400/400",
-          description: "Álbum debut del legendario colectivo.",
-          stock: 13,
-        },
       ];
-
       const filtered =
         selectedGenre === "all"
           ? mockVinyls
           : mockVinyls.filter((v) => v.genre === selectedGenre);
-
       setVinyls(filtered);
-    } catch (error) {
-      console.error("Error fetching vinyls:", error);
     } finally {
       setLoading(false);
     }
