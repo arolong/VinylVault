@@ -19,7 +19,7 @@ const vinyls: Vinyl[] = [
         genre: 'rap',
         price: 145000,
         year: 2000,
-        coverImage: 'https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=400&h=400&fit=crop',
+        coverImage: '/albums/eminem-marshall-mathers.png',
         description: 'Segundo álbum de estudio de Eminem, uno de los más exitosos.',
         stock: 12
     },
@@ -30,7 +30,7 @@ const vinyls: Vinyl[] = [
         genre: 'rap',
         price: 136000,
         year: 1994,
-        coverImage: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400&h=400&fit=crop',
+        coverImage: '/albums/biggie-ready-to-die.png',
         description: 'Debut de Biggie, un clásico del rap de los 90.',
         stock: 14
     },
@@ -41,7 +41,7 @@ const vinyls: Vinyl[] = [
         genre: 'rap',
         price: 142000,
         year: 1993,
-        coverImage: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400&h=400&fit=crop',
+        coverImage: '/albums/snoop-dogg-doggystyle.png',
         description: 'Debut icónico de Snoop Dogg, productor de Dr. Dre.',
         stock: 11
     },
@@ -52,7 +52,7 @@ const vinyls: Vinyl[] = [
         genre: 'rap',
         price: 138000,
         year: 1992,
-        coverImage: 'https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=400&h=400&fit=crop',
+        coverImage: '/albums/dre-the-chronic.png',
         description: 'Álbum revolucionario que definió el sonido del rap de los 90.',
         stock: 13
     },
@@ -63,7 +63,7 @@ const vinyls: Vinyl[] = [
         genre: 'rap',
         price: 140000,
         year: 1991,
-        coverImage: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400&h=400&fit=crop',
+        coverImage: '/albums/tupac-2pacalypse-now.png',
         description: 'Álbum debut de Tupac Shakur, crudo y poderoso.',
         stock: 10
     },
@@ -74,7 +74,7 @@ const vinyls: Vinyl[] = [
         genre: 'rap',
         price: 148000,
         year: 1996,
-        coverImage: 'https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=400&h=400&fit=crop',
+        coverImage: '/albums/tupac-all-eyez-on-me.png',
         description: 'Doble álbum de 2Pac, uno de los más vendidos en la historia del rap.',
         stock: 9
     },
@@ -85,7 +85,7 @@ const vinyls: Vinyl[] = [
         genre: 'rap',
         price: 144000,
         year: 1997,
-        coverImage: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400&h=400&fit=crop',
+        coverImage: '/albums/snoop-dogg-tha-doggfather.png',
         description: 'Segundo álbum de estudio de Snoop Dogg con producción de Dr. Dre.',
         stock: 10
     },
@@ -96,7 +96,7 @@ const vinyls: Vinyl[] = [
         genre: 'rap',
         price: 139000,
         year: 2000,
-        coverImage: 'https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=400&h=400&fit=crop',
+        coverImage: '/albums/snoop-dogg-tha-last-meal.png',
         description: 'Tercer álbum de estudio de Snoop Dogg lleno de colaboraciones.',
         stock: 8
     },
@@ -108,7 +108,7 @@ const vinyls: Vinyl[] = [
         genre: 'hip-hop',
         price: 125000,
         year: 1994,
-        coverImage: 'https://images.unsplash.com/photo-1487180144351-b8472da7d491?w=400&h=400&fit=crop',
+        coverImage: '/albums/nas-illmatic.png',
         description: 'Album clásico de hip-hop, considerado una obra maestra del género.',
         stock: 15
     },
@@ -119,7 +119,7 @@ const vinyls: Vinyl[] = [
         genre: 'hip-hop',
         price: 130000,
         year: 1995,
-        coverImage: 'https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=400&h=400&fit=crop',
+        coverImage: '/albums/gza-liquid-swords.png',
         description: 'Obra maestra del Wu-Tang Clan con producción magistral.',
         stock: 12
     },
@@ -130,7 +130,7 @@ const vinyls: Vinyl[] = [
         genre: 'hip-hop',
         price: 128000,
         year: 1993,
-        coverImage: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400&h=400&fit=crop',
+        coverImage: '/albums/wu-tang-36-chambers.png',
         description: 'Álbum revolucionario que cambió el hip-hop para siempre.',
         stock: 18
     },
@@ -141,7 +141,7 @@ const vinyls: Vinyl[] = [
         genre: 'hip-hop',
         price: 127000,
         year: 1993,
-        coverImage: 'https://images.unsplash.com/photo-1487180144351-b8472da7d491?w=400&h=400&fit=crop',
+        coverImage: '/albums/atcq-midnight-marauders.png',
         description: 'Álbum de hip-hop jazz con rimas reflexivas.',
         stock: 14
     },
@@ -152,7 +152,7 @@ const vinyls: Vinyl[] = [
         genre: 'hip-hop',
         price: 126000,
         year: 1991,
-        coverImage: 'https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=400&h=400&fit=crop',
+        coverImage: '/albums/atcq-low-end-theory.png',
         description: 'Segundo álbum innovador de A Tribe Called Quest.',
         stock: 11
     },
@@ -163,7 +163,7 @@ const vinyls: Vinyl[] = [
         genre: 'hip-hop',
         price: 132000,
         year: 1998,
-        coverImage: 'https://images.unsplash.com/photo-1487180144351-b8472da7d491?w=400&h=400&fit=crop',
+        coverImage: '/albums/outkast-aquemini.png',
         description: 'Tercer álbum de OutKast con producción innovadora y líricas profundas.',
         stock: 13
     },
@@ -174,7 +174,7 @@ const vinyls: Vinyl[] = [
         genre: 'hip-hop',
         price: 134000,
         year: 2000,
-        coverImage: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400&h=400&fit=crop',
+        coverImage: '/albums/outkast-stankonia.png',
         description: 'Cuarto álbum de estudio de OutKast ganador de múltiples Grammy.',
         stock: 12
     },
@@ -185,7 +185,7 @@ const vinyls: Vinyl[] = [
         genre: 'hip-hop',
         price: 128000,
         year: 1995,
-        coverImage: 'https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=400&h=400&fit=crop',
+        coverImage: '/albums/mobb-deep-the-infamous.png',
         description: 'Álbum debut de Mobb Deep que define el sonido dark de Nueva York.',
         stock: 11
     },
@@ -197,7 +197,7 @@ const vinyls: Vinyl[] = [
         genre: 'rock',
         price: 165000,
         year: 1971,
-        coverImage: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=400&h=400&fit=crop',
+        coverImage: '/albums/led-zeppelin-iv.png',
         description: 'Cuarto álbum de estudio, incluye "Stairway to Heaven".',
         stock: 8
     },
@@ -208,7 +208,7 @@ const vinyls: Vinyl[] = [
         genre: 'rock',
         price: 178000,
         year: 1973,
-        coverImage: 'https://images.unsplash.com/photo-1487180144351-b8472da7d491?w=400&h=400&fit=crop',
+        coverImage: '/albums/pink-floyd-dark-side.png',
         description: 'Obra maestra del rock progresivo.',
         stock: 20
     },
@@ -219,7 +219,7 @@ const vinyls: Vinyl[] = [
         genre: 'rock',
         price: 149000,
         year: 1987,
-        coverImage: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400&h=400&fit=crop',
+        coverImage: '/albums/guns-roses-appetite.png',
         description: 'Álbum debut, incluye "Sweet Child O Mine".',
         stock: 18
     },
@@ -230,7 +230,7 @@ const vinyls: Vinyl[] = [
         genre: 'rock',
         price: 175000,
         year: 1979,
-        coverImage: 'https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=400&h=400&fit=crop',
+        coverImage: '/albums/pink-floyd-the-wall.png',
         description: 'Álbum conceptual épico, una de las mejores obras del rock.',
         stock: 16
     },
@@ -241,7 +241,7 @@ const vinyls: Vinyl[] = [
         genre: 'rock',
         price: 155000,
         year: 1969,
-        coverImage: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=400&h=400&fit=crop',
+        coverImage: '/albums/beatles-abbey-road.png',
         description: 'Penúltimo álbum de The Beatles, con grandes clásicos.',
         stock: 22
     },
@@ -252,7 +252,7 @@ const vinyls: Vinyl[] = [
         genre: 'rock',
         price: 152000,
         year: 1980,
-        coverImage: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400&h=400&fit=crop',
+        coverImage: '/albums/acdc-back-in-black.png',
         description: 'Álbum icónico de AC/DC con el clásico "Back in Black".',
         stock: 19
     },
@@ -263,7 +263,7 @@ const vinyls: Vinyl[] = [
         genre: 'rock',
         price: 150000,
         year: 1979,
-        coverImage: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=400&h=400&fit=crop',
+        coverImage: '/albums/acdc-highway-to-hell.png',
         description: 'Penúltimo álbum de AC/DC con Bon Scott antes de su muerte.',
         stock: 17
     },
@@ -274,7 +274,7 @@ const vinyls: Vinyl[] = [
         genre: 'rock',
         price: 180000,
         year: 1979,
-        coverImage: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400&h=400&fit=crop',
+        coverImage: '/albums/pink-floyd-the-wall-v2.png',
         description: 'Álbum doble conceptual, una de las obras maestras del rock progresivo.',
         stock: 14
     },
@@ -286,7 +286,7 @@ const vinyls: Vinyl[] = [
         genre: 'salsa',
         price: 115000,
         year: 1978,
-        coverImage: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400&h=400&fit=crop',
+        coverImage: '/albums/willie-colon-siembra.png',
         description: 'Álbum icónico de salsa, con Pedro Navaja.',
         stock: 10
     },
@@ -297,7 +297,7 @@ const vinyls: Vinyl[] = [
         genre: 'salsa',
         price: 112000,
         year: 1983,
-        coverImage: 'https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=400&h=400&fit=crop',
+        coverImage: '/albums/oscar-de-leon-de-ti-depende.png',
         description: 'Clásico de la salsa venezolana.',
         stock: 9
     },
@@ -308,53 +308,42 @@ const vinyls: Vinyl[] = [
         genre: 'salsa',
         price: 118000,
         year: 1978,
-        coverImage: 'https://images.unsplash.com/photo-1487180144351-b8472da7d491?w=400&h=400&fit=crop',
+        coverImage: '/albums/hector-lavoe-el-cantante.png',
         description: 'Álbum solo de Héctor Lavoe, expresión de su alma.',
         stock: 8
     },
     {
         id: '19',
-        title: 'Colección de Oro',
+        title: 'Boleros',
         artist: 'Celia Cruz',
         genre: 'salsa',
         price: 120000,
         year: 1980,
-        coverImage: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=400&h=400&fit=crop',
-        description: 'Lo mejor de Celia Cruz, la reina de la salsa.',
+        coverImage: '/albums/celia-cruz-boleros.png',
+        description: 'Álbum de boleros de Celia Cruz, la reina de la salsa, con sus mejores interpretaciones.',
         stock: 13
     },
     {
         id: '20',
-        title: 'Vuelvo a Empezar',
+        title: 'Salsa Baúl',
         artist: 'Eddie Santiago',
         genre: 'salsa',
         price: 114000,
         year: 1984,
-        coverImage: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400&h=400&fit=crop',
-        description: 'Álbum romántico de Eddie Santiago con balada salsera.',
+        coverImage: '/albums/eddie-santiago-salsa-baul.png',
+        description: 'Colección especial de Eddie Santiago con lo mejor de su repertorio salsero.',
         stock: 11
     },
     {
         id: '20b',
-        title: 'El Sueño del Curro',
+        title: 'La Llave de mi Corazón',
         artist: 'Juan Luis Guerra',
         genre: 'salsa',
         price: 116000,
         year: 1989,
-        coverImage: 'https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=400&h=400&fit=crop',
-        description: 'Álbum ganador de Grammy con éxitos internacionales de Juan Luis Guerra.',
+        coverImage: '/albums/juan-luis-guerra-la-llave-de-mi-corazon.png',
+        description: 'Álbum romántico de Juan Luis Guerra con sus baladas salseras más emotivas.',
         stock: 12
-    },
-    {
-        id: '20c',
-        title: 'La Murga de Oro',
-        artist: 'Rubén Blades',
-        genre: 'salsa',
-        price: 113000,
-        year: 1980,
-        coverImage: 'https://images.unsplash.com/photo-1487180144351-b8472da7d491?w=400&h=400&fit=crop',
-        description: 'Álbum clásico de Rubén Blades con la Fania All-Stars.',
-        stock: 10
     },
     {
         id: '20d',
@@ -363,20 +352,9 @@ const vinyls: Vinyl[] = [
         genre: 'salsa',
         price: 117000,
         year: 1984,
-        coverImage: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400&h=400&fit=crop',
+        coverImage: '/albums/ruben-blades-buscando-america.png',
         description: 'Álbum de protesta social de Rubén Blades, tocando temas políticos.',
         stock: 9
-    },
-    {
-        id: '20e',
-        title: 'La Voz Timba',
-        artist: 'Isaac Delgado',
-        genre: 'salsa',
-        price: 111000,
-        year: 1990,
-        coverImage: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=400&h=400&fit=crop',
-        description: 'Álbum de timba cubana con rítmos modernos y contagiosos.',
-        stock: 11
     }
 ];
 
