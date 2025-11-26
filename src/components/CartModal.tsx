@@ -68,18 +68,28 @@ export default function CartModal({ onClose }: CartModalProps) {
                         </span>
                         <button
                           onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                          className="bg-vintage-brown text-vintage-cream w-8 h-8 rounded-full hover:bg-vintage-orange transition-colors"
+                          disabled={item.quantity >= item.stock}
+                          className={`w-8 h-8 rounded-full transition-colors text-vintage-cream font-bold ${
+                            item.quantity >= item.stock
+                              ? 'bg-gray-400 cursor-not-allowed'
+                              : 'bg-vintage-brown hover:bg-vintage-orange'
+                          }`}
                         >
                           +
                         </button>
                       </div>
                       
-                      <button
-                        onClick={() => removeFromCart(item.id)}
-                        className="text-red-600 hover:text-red-800 text-sm"
-                      >
-                        🗑️ Eliminar
-                      </button>
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs text-vintage-brown/60">
+                          Stock: {item.stock - item.quantity}
+                        </span>
+                        <button
+                          onClick={() => removeFromCart(item.id)}
+                          className="text-red-600 hover:text-red-800 text-sm"
+                        >
+                          🗑️
+                        </button>
+                      </div>
                     </div>
                   </div>
                 ))}

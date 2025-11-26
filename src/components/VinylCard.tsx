@@ -78,14 +78,16 @@ export default function VinylCard({ vinyl }: VinylCardProps) {
           </span>
           <button
             onClick={handleAddToCart}
-            disabled={isAdding}
+            disabled={isAdding || vinyl.stock === 0}
             className={`px-4 py-2 rounded-full transition-all text-sm font-medium ${
-              isAdding
+              vinyl.stock === 0
+                ? "bg-gray-400 text-gray-600 cursor-not-allowed"
+                : isAdding
                 ? "bg-green-600 text-white scale-110"
                 : "bg-vintage-brown text-vintage-cream hover:bg-vintage-orange"
             }`}
           >
-            {isAdding ? "✓ Agregado!" : "Agregar 🛒"}
+            {vinyl.stock === 0 ? "Agotado" : isAdding ? "✓ Agregado!" : "Agregar 🛒"}
           </button>
         </div>
       </div>

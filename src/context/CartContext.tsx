@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useState, ReactNode } from "react";
+import { createContext, useContext, useState, ReactNode, useEffect } from "react";
 import { Vinyl, CartItem } from "@/types";
 
 interface CartContextType {
@@ -17,12 +17,40 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 
 export function CartProvider({ children }: { children: ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([]);
+  const [isHydrated, setIsHydrated] = useState(false);
+
+  // Cargar carrito desde localStorage al montar
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const savedCart = localStorage.getItem("vinylCart");
+      if (savedCart) {
+        try {
+          setItems(JSON.parse(savedCart));
+        } catch (error) {
+          console.error("Error loading cart from localStorage:", error);
+        }
+      }
+      setIsHydrated(true);
+    }
+  }, []);
+
+  // Guardar carrito en localStorage cuando cambia
+  useEffect(() => {
+    if (isHydrated && typeof window !== "undefined") {
+      localStorage.setItem("vinylCart", JSON.stringify(items));
+    }
+  }, [items, isHydrated]);
 
   const addToCart = (vinyl: Vinyl) => {
     setItems((prevItems) => {
       const existingItem = prevItems.find((item) => item.id === vinyl.id);
 
+      // Validar que no exceda el stock
       if (existingItem) {
+        if (existingItem.quantity >= vinyl.stock) {
+          console.warn(`No hay más stock de ${vinyl.title}`);
+          return prevItems;
+        }
         return prevItems.map((item) =>
           item.id === vinyl.id ? { ...item, quantity: item.quantity + 1 } : item
         );
@@ -43,7 +71,17 @@ export function CartProvider({ children }: { children: ReactNode }) {
     }
 
     setItems((prevItems) =>
-      prevItems.map((item) => (item.id === id ? { ...item, quantity } : item))
+      prevItems.map((item) => {
+        if (item.id === id) {
+          // Validar que no exceda el stock
+          if (quantity > item.stock) {
+            console.warn(`No hay suficiente stock. Máximo disponible: ${item.stock}`);
+            return item; // No cambiar cantidad
+          }
+          return { ...item, quantity };
+        }
+        return item;
+      })
     );
   };
 
