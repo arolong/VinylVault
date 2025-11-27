@@ -1,6 +1,8 @@
 'use client';
 
+import { useState } from 'react';
 import { useCart } from '@/context/CartContext';
+import CheckoutModal from './CheckoutModal';
 
 interface CartModalProps {
   onClose: () => void;
@@ -8,17 +10,18 @@ interface CartModalProps {
 
 export default function CartModal({ onClose }: CartModalProps) {
   const { items, removeFromCart, updateQuantity, getTotalPrice, clearCart } = useCart();
+  const [showCheckout, setShowCheckout] = useState(false);
 
   return (
     <>
       {/* Backdrop */}
       <div 
-        className="fixed inset-0 bg-black/50 z-40"
+        className="fixed inset-0 bg-black/50 z-40 animate-fadeIn"
         onClick={onClose}
       />
       
       {/* Modal */}
-      <div className="fixed right-0 top-0 h-full w-full md:w-96 bg-vintage-cream z-50 shadow-2xl overflow-y-auto">
+      <div className="fixed right-0 top-0 h-full w-full md:w-96 bg-vintage-cream z-50 shadow-2xl overflow-y-auto transform transition-transform duration-300 ease-out animate-slideInRight">
         <div className="p-6">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-2xl font-bold text-vintage-brown">
@@ -40,8 +43,12 @@ export default function CartModal({ onClose }: CartModalProps) {
           ) : (
             <>
               <div className="space-y-4 mb-6">
-                {items.map(item => (
-                  <div key={item.id} className="bg-vintage-beige p-4 rounded-lg border-2 border-vintage-brown/20">
+                {items.map((item, index) => (
+                  <div 
+                    key={item.id} 
+                    className="bg-vintage-beige p-4 rounded-lg border-2 border-vintage-brown/20 hover:border-vintage-orange transition-all duration-200 transform hover:scale-102 animate-fadeIn"
+                    style={{ animationDelay: `${index * 50}ms` }}
+                  >
                     <div className="flex gap-4">
                       <img 
                         src={item.coverImage} 
@@ -107,7 +114,10 @@ export default function CartModal({ onClose }: CartModalProps) {
               </div>
 
               <div className="space-y-3">
-                <button className="w-full bg-vintage-orange text-vintage-cream py-3 rounded-full font-bold hover:bg-vintage-brown transition-colors">
+                <button 
+                  onClick={() => setShowCheckout(true)}
+                  className="w-full bg-vintage-orange text-vintage-cream py-3 rounded-full font-bold hover:bg-vintage-brown transition-colors transform hover:scale-105 active:scale-95"
+                >
                   Proceder al Pago 💳
                 </button>
                 <button
@@ -117,6 +127,18 @@ export default function CartModal({ onClose }: CartModalProps) {
                   Vaciar Carrito
                 </button>
               </div>
+
+              {showCheckout && (
+                <CheckoutModal
+                  items={items}
+                  totalPrice={getTotalPrice()}
+                  onClose={() => setShowCheckout(false)}
+                  onSuccess={() => {
+                    clearCart();
+                    onClose();
+                  }}
+                />
+              )}
             </>
           )}
         </div>
