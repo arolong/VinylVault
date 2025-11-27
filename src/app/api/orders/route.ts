@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 
 export async function POST(req: Request) {
   try {
-    const { userId, items, totalPrice } = await req.json();
+    const { userId, email, name, phone, items, totalPrice } = await req.json();
 
     if (!items || items.length === 0) {
       return NextResponse.json(
@@ -26,13 +26,35 @@ export async function POST(req: Request) {
       }
     }
 
+    // Crear o buscar usuario
+    let user;
+    if (userId) {
+      user = await prisma.user.findUnique({ where: { id: userId } });
+    } else if (email) {
+      // Buscar usuario por email o crear uno nuevo
+      user = await prisma.user.upsert({
+        where: { email },
+        update: {},
+        create: {
+          email,
+          name: name || 'Guest',
+          phone: phone || null,
+        },
+      });
+    } else {
+      return NextResponse.json(
+        { error: 'Se requiere userId o email' },
+        { status: 400 }
+      );
+    }
+
     // Crear la orden
     const order = await prisma.order.create({
       data: {
-        userId,
+        userId: user.id,
         totalPrice,
         status: 'pending',
-        paymentMethod: 'mercadopago', // Default, será actualizado después
+        paymentMethod: 'mercadopago',
         orderItems: {
           createMany: {
             data: items.map((item: any) => ({

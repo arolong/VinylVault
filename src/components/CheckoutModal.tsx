@@ -30,24 +30,15 @@ export default function CheckoutModal({ items, totalPrice, onClose, onSuccess }:
     setError(null);
 
     try {
-      // 1. Crear o buscar usuario
-      const userRes = await fetch('/api/users', {
+      const orderRes = await fetch('/api/orders', {
         method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
         body: JSON.stringify({
           email: formData.email,
           name: formData.name,
           phone: formData.phone,
-        }),
-      });
-
-      if (!userRes.ok) throw new Error('Error al crear usuario');
-      const user = await userRes.json();
-
-      // 2. Crear orden
-      const orderRes = await fetch('/api/orders', {
-        method: 'POST',
-        body: JSON.stringify({
-          userId: user.id,
           items: items.map(item => ({
             vinylId: item.id,
             quantity: item.quantity,
@@ -63,8 +54,6 @@ export default function CheckoutModal({ items, totalPrice, onClose, onSuccess }:
       }
 
       const order = await orderRes.json();
-      
-      // 3. Éxito
       alert(`✅ ¡Orden creada! ID: ${order.id}\n\nTotal: $${totalPrice.toLocaleString('es-CO')} COP`);
       onSuccess();
       onClose();
