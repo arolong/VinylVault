@@ -55,9 +55,3 @@ src/
 
 Lee **EXPLICACION_PROYECTO.md** para entender todo lo que hice paso a paso.
 
-## Por hacer
-
-- [ ] Conectar base de datos
-- [ ] Sistema de login
-- [ ] Proceso de pago
-- [ ] Panel de admin
