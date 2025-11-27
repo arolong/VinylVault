@@ -17,7 +17,9 @@ Básicamente creé una tienda online de vinilos desde cero. La idea era hacer al
 - **Tailwind CSS**: Para los estilos. Es tipo CSS pero escribes las clases directo en el HTML. Me ahorró MUCHO tiempo porque no tuve que escribir mucho CSS .
 
 ### Backend (la parte de atrás)
-- **Express.js**: Un servidor súper simple para hacer una API. Todavía no está conectado a una base de datos real porque eso lo voy a hacer después.
+- **Next.js API Routes**: Creé rutas API en Next.js (`/api/vinyls`, `/api/users`, `/api/orders`) que conectan directamente con la base de datos. Mucho más simple que Express.
+- **Prisma ORM**: Para conectar con la base de datos de forma segura y fácil.
+- **SQLite local**: Para desarrollo. Datos persistentes y sin configuración complicada.
 
 ### Colores (Paleta Vintage)
 Quería que se viera retro tipo años 70-80, entonces busqué colores vintage en internet:
@@ -183,13 +185,29 @@ npm run dev
 
 ## Lo que me falta hacer (TODOs)
 
-- [ ] Conectar con una base de datos real (Supabase o Prisma)
-- [ ] Hacer login/registro de usuarios
-- [ ] Que el botón de "Proceder al pago" funcione de verdad
+- [x] Conectar con una base de datos real (Supabase o Prisma) ✅ **HECHO**
+- [x] Crear API routes para vinilos, usuarios y órdenes ✅ **HECHO**
+- [x] Que el botón de "Proceder al pago" funcione (checkout) ✅ **HECHO**
+- [x] Sistema de órdenes funcional ✅ **HECHO**
+- [ ] Hacer login/registro de usuarios (puede ser futuro)
 - [ ] Agregar búsqueda de vinilos
 - [ ] Hacer que se pueda ver el detalle de cada vinilo
 - [ ] Agregar reseñas/comentarios
 - [ ] Hacer el panel de administrador
+- [ ] Desplegar a producción (Vercel, Netlify, etc)
+
+## Estado Actual del Proyecto ✅
+
+**El proyecto está 100% funcional:**
+- ✅ Base de datos SQLite con 31 vinilos
+- ✅ API completa (GET /api/vinyls, POST /api/orders, etc)
+- ✅ Carrito de compras totalmente funcional
+- ✅ Sistema de órdenes que crea usuarios automáticamente
+- ✅ Catálogo con filtros por género
+- ✅ Validación de stock
+- ✅ Checkout modal con formulario
+- ✅ TypeScript en todo el código
+- ✅ Diseño responsive y vintage
 
 ## Conclusión
 
