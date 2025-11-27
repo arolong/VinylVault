@@ -1,0 +1,73 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// ========== USUARIOS ==========
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  phone     String?
+  name      String
+  password  String?  // Hashear con bcrypt en producción
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  orders    Order[]
+}
+
+// ========== VINILOS ==========
+model Vinyl {
+  id          String   @id @default(cuid())
+  title       String
+  artist      String
+  genre       String   // RAP, HIP-HOP, ROCK, SALSA
+  price       Float
+  year        Int
+  stock       Int
+  coverImage  String
+  description String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  orderItems  OrderItem[]
+}
+
+// ========== ÓRDENES ==========
+model Order {
+  id            String   @id @default(cuid())
+  userId        String
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  totalPrice    Float
+  status        String   @default("pending")
+  // pending = esperando pago
+  // paid = pagado ✓
+  // shipped = enviado 📦
+  // delivered = entregado 🎉
+  // cancelled = cancelado ❌
+  
+  paymentMethod String?
+  orderItems    OrderItem[]
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+// ========== ITEMS DE LA ORDEN ==========
+model OrderItem {
+  id       String @id @default(cuid())
+  orderId  String
+  order    Order  @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  
+  vinylId  String
+  vinyl    Vinyl  @relation(fields: [vinylId], references: [id])
+  
+  quantity Int
+  price    Float
+
+  @@unique([orderId, vinylId])
+}
