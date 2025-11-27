@@ -320,33 +320,39 @@ const vinyls = [
 async function main() {
   console.log('🌱 Iniciando seed de la base de datos...');
 
-  // Limpiar datos existentes
-  await prisma.orderItem.deleteMany();
-  await prisma.order.deleteMany();
-  await prisma.vinyl.deleteMany();
-  await prisma.user.deleteMany();
-
-  console.log('✨ Base de datos limpia');
-
-  // Insertar vinilos
+  // Insertar vinilos (sin duplicados)
+  let createdCount = 0;
   for (const vinyl of vinyls) {
-    await prisma.vinyl.create({
-      data: vinyl,
+    const existing = await prisma.vinyl.findFirst({
+      where: { title: vinyl.title, artist: vinyl.artist }
     });
+    
+    if (!existing) {
+      await prisma.vinyl.create({ data: vinyl });
+      createdCount++;
+    }
   }
 
-  console.log(`✅ ${vinyls.length} vinilos agregados a la base de datos`);
+  console.log(`✅ ${createdCount} vinilos agregados a la base de datos`);
 
-  // Crear usuario de prueba
-  const user = await prisma.user.create({
-    data: {
-      name: 'Usuario Test',
-      email: 'test@vinylvault.com',
-      phone: '+573001234567',
-    },
+  // Crear usuario de prueba (sin duplicados)
+  const existingUser = await prisma.user.findUnique({
+    where: { email: 'test@vinylvault.com' }
   });
 
-  console.log('✅ Usuario de prueba creado');
+  if (!existingUser) {
+    await prisma.user.create({
+      data: {
+        name: 'Usuario Test',
+        email: 'test@vinylvault.com',
+        phone: '+573001234567',
+      },
+    });
+    console.log('✅ Usuario de prueba creado');
+  } else {
+    console.log('✅ Usuario de prueba ya existe');
+  }
+
   console.log('🎉 Seed completado exitosamente!');
 }
 
